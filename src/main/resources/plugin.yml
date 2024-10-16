@@ -1,0 +1,10 @@
+name: ${rootProject.name}
+version: ${rootProject.version}
+api-version: '1.21'
+main: kr.rlatndud.Main
+description: SwordWar
+author: r1atndud
+
+libraries:
+  - org.jetbrains.kotlin:kotlin-stdlib:2.0.0
+  - org.jetbrains.kotlin:kotlin-reflect:2.0.0
