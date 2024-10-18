@@ -1,6 +1,6 @@
 package kr.rlatndud
 
-import kr.rlatndud.sword.Hinokami_Kagura
+import kr.rlatndud.sword.FireAbility_Sword
 import org.bukkit.plugin.java.JavaPlugin
 
 class Main : JavaPlugin() {
@@ -12,7 +12,7 @@ class Main : JavaPlugin() {
         instance = this
 
         server.pluginManager.apply {
-            registerEvents(Hinokami_Kagura(), this@Main)
+            registerEvents(FireAbility_Sword(), this@Main)
         }
 
     }

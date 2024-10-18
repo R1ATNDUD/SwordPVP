@@ -10,11 +10,10 @@ import org.bukkit.event.block.Action
 import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.potion.PotionEffect
 import org.bukkit.potion.PotionEffectType
-import org.bukkit.scheduler.BukkitRunnable
 import kotlin.math.cos
 import kotlin.math.sin
 
-class Hinokami_Kagura : Listener {
+class FireAbility_Sword : Listener {
 
     @EventHandler
     fun onClick(e: PlayerInteractEvent) {
@@ -49,7 +48,7 @@ class Hinokami_Kagura : Listener {
 
                 Bukkit.getScheduler().runTaskLater(instance,  { _->
 
-                        world.spawnParticle(Particle.SMOKE, p.location, 10, 0.0, 0.0, 0.0)
+                        world.spawnParticle(Particle.FLAME, p.location, 15, 0.0, 0.0, 0.0)
 
                 },60L)
 
