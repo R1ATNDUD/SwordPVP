@@ -1,6 +1,8 @@
 package kr.rlatndud.sword
 
 import kr.rlatndud.Main.Companion.instance
+import net.kyori.adventure.text.Component
+import net.kyori.adventure.text.format.NamedTextColor
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.Particle
@@ -23,12 +25,15 @@ class FireAbility_Sword : Listener {
         val world = p.world
         val radius = 3.0  // 원의 반지름
         val particleCount = 100
+        val player_direction = p.location.direction
 
         if (a == Action.RIGHT_CLICK_AIR || a == Action.RIGHT_CLICK_BLOCK) {
 
             if (e.item?.type == null) return
 
             if (e.item?.type == Material.GOLDEN_SWORD) {
+
+                p.velocity = player_direction.multiply(2.0)
 
                 for (i in 0 until particleCount) {
                     val angle = 2 * Math.PI * i / particleCount  // 각도 계산
@@ -49,6 +54,8 @@ class FireAbility_Sword : Listener {
                 Bukkit.getScheduler().runTaskLater(instance,  { _->
 
                         world.spawnParticle(Particle.FLAME, p.location, 15, 0.0, 0.0, 0.0)
+
+                        p.sendActionBar(Component.text("[스킬 사용중...]").color(NamedTextColor.DARK_RED))
 
                 },60L)
 
